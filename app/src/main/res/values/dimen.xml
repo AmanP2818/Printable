@@ -1,0 +1,40 @@
+<resources>
+    <!-- Margins -->
+    <dimen name="margin_small">10dp</dimen>
+    <dimen name="margin_medium">20dp</dimen>
+    <dimen name="margin_large">30dp</dimen>
+
+    <!-- Padding -->
+    <dimen name="padding_small">8dp</dimen>
+    <dimen name="padding_medium">10dp</dimen>
+    <dimen name="padding_large">15dp</dimen>
+
+    <!-- Text Sizes -->
+    <dimen name="text_small">10sp</dimen>
+    <dimen name="text_medium">12sp</dimen>
+    <dimen name="text_large">16sp</dimen>
+    <dimen name="text_xlarge">18sp</dimen>
+    <dimen name="text_xxlarge">22sp</dimen>
+
+    <dimen name="listview_height">300dp</dimen>
+
+    <!-- Image Sizes -->
+    <dimen name="image_small">30dp</dimen>
+    <dimen name="image_medium">50dp</dimen>
+    <dimen name="image_large">150dp</dimen>
+    <dimen name="image_xlarge">40dp</dimen>
+
+    <!-- Button Sizes -->
+
+    <dimen name="button_height">35dp</dimen>
+    <dimen name="button_width">50dp</dimen>
+    <dimen name="button_margin">10dp</dimen>
+    <dimen name="button_text_size">12sp</dimen>
+
+    <!-- GridView Spacing -->
+    <dimen name="grid_spacing">10dp</dimen>
+    <dimen name="grid_padding">10dp</dimen>
+
+
+
+</resources>
