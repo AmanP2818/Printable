@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Mobile_Otp"
+    android:background="@color/white">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="225dp"
+        android:layout_height="225dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/phone"/>
+
+    <TextView
+        android:id="@+id/otpTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="OTP Verification"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/otpSubTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/otpTextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="We will send you One Time Password"
+        android:paddingLeft="70dp"
+        android:paddingRight="70dp"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/otpSubTextView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/otpSubTextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="on Your Phone Number"
+        android:paddingLeft="70dp"
+        android:paddingRight="70dp"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="16sp" />
+
+    <LinearLayout
+        android:id="@+id/phoneNumberLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/otpSubTextView2"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/countryCodeTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="+91"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:padding="10dp" />
+
+        <EditText
+            android:id="@+id/phoneNumberEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Enter mobile number"
+            android:inputType="phone"
+            android:padding="10dp"
+            android:background="@android:drawable/editbox_background_normal" />
+
+    </LinearLayout>
+
+    <CheckBox
+        android:id="@+id/termsCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/phoneNumberLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="I have read and agreed to Terms and Conditions and Privacy Policy"
+        android:textColor="@android:color/black"
+        android:padding="20dp"
+        android:textSize="14sp" />
+
+   <FrameLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_below="@id/termsCheckBox">
+
+       <Button
+           android:id="@+id/getOtpButton"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="20dp"
+           android:layout_marginStart="30dp"
+           android:layout_marginEnd="30dp"
+           android:backgroundTint="@android:color/holo_blue_light"
+           android:text="Get OTP"
+           android:textColor="@android:color/white"
+           android:textSize="16sp" />
+       
+       <ProgressBar
+           android:layout_width="35dp"
+           android:layout_height="35dp"
+           android:id="@+id/progress_bar_otp"
+           android:layout_gravity="center"
+           android:visibility="gone"/>
+   </FrameLayout>
+
+
+</RelativeLayout>

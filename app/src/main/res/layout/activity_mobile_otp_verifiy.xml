@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".mobile_otp_verifiy"
+    android:padding="16dp">
+
+    <ImageButton
+        android:id="@+id/back_arrow_button"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:contentDescription="back arrow"
+        android:src="@drawable/back_button_image"
+        android:background="?attr/selectableItemBackgroundBorderless" />
+    <TextView
+        android:id="@+id/verification_code_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/back_arrow_button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:text="Verification Code"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black" />
+
+    <TextView
+        android:id="@+id/verification_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/verification_code_text"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="We have sent the verification code  to \nyour mobile number"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:textColor="@android:color/darker_gray" />
+
+    <TextView
+        android:id="@+id/mobile_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/verification_message"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:textSize="16sp"
+        android:textColor="@android:color/holo_blue_light"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:id="@+id/otp_input_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/mobile_number"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:orientation="horizontal">
+
+    <EditText
+        android:id="@+id/Ver1text"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/otp_input_background"
+        android:gravity="center"
+        android:inputType="number"
+        android:maxLength="1"
+        android:textSize="24sp" />
+
+    <EditText
+        android:id="@+id/Ver2text"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/otp_input_background"
+        android:gravity="center"
+        android:inputType="number"
+        android:maxLength="1"
+        android:textSize="24sp" />
+
+    <EditText
+        android:id="@+id/Ver3text"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/otp_input_background"
+        android:gravity="center"
+        android:inputType="number"
+        android:maxLength="1"
+        android:textSize="24sp" />
+
+        <EditText
+            android:id="@+id/Ver4text"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/otp_input_background"
+            android:gravity="center"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textSize="24sp" />
+
+        <EditText
+            android:id="@+id/Ver5text"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/otp_input_background"
+            android:gravity="center"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textSize="24sp" />
+
+        <EditText
+            android:id="@+id/Ver6text"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/otp_input_background"
+            android:gravity="center"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textSize="24sp" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/resend_linear_lay"
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/otp_input_container"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:textSize="14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Didn't receive the otp"
+            android:textColor="#6A6464"/>
+
+        <TextView
+            android:id="@+id/Resendotp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:text="RESEND OTP AGAIN"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+    
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/resend_linear_lay">
+
+        <Button
+            android:id="@+id/verify_otp_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:backgroundTint="@android:color/holo_blue_light"
+            android:text="Verify OTP"
+            android:layout_margin="30dp"
+            android:textColor="@android:color/white"
+            android:textSize="16sp" />
+
+        <ProgressBar
+            android:id="@+id/progress_bar_verify"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center"
+            android:visibility="gone"/>
+
+    </FrameLayout>
+
+
+
+</RelativeLayout>

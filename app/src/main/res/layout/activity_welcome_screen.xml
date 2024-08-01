@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".WelcomeScreen"
+    android:background="@color/white">
+
+    <ImageView
+        android:id="@+id/background_wave"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:src="@drawable/welcome" />
+
+    <ImageView
+        android:id="@+id/woneimage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/woneimage"
+        android:layout_below="@id/background_wave"
+        android:layout_centerInParent="true"/>
+
+    <TextView
+        android:id="@+id/welcome_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/woneimage"
+        android:layout_marginTop="16dp"
+        android:text="Welcome!"
+        android:textSize="24sp"
+        android:textColor="@android:color/black"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/description_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/welcome_text"
+        android:layout_marginTop="8dp"
+        android:text="simplifies document scanning and organization, boosting productivity with easy sharing. Plus, it offers print selection and home delivery for added convenience."
+        android:textSize="14sp"
+        android:textColor="@android:color/black"
+        android:textAlignment="center"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp" />
+
+    <Button
+        android:id="@+id/getting_started_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/description_text"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="#2F80ED"
+        android:text="Getting started"
+        android:textColor="@android:color/white" />
+
+
+    <TextView
+        android:id="@+id/terms_policies_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"
+        android:text="By continuing you are agreeing to the following Terms of Services and User Policies"
+        android:textSize="12sp"
+        android:textColor="@android:color/darker_gray"
+        android:textAlignment="center"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp" />
+
+
+</RelativeLayout>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".app_tour_one"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+    <ImageView
+        android:id="@+id/waveImageView"
+        android:layout_width="match_parent"
+        android:layout_height="553dp"
+        android:layout_gravity="bottom"
+        android:contentDescription="Wave Background"
+        android:scaleType="fitXY"
+        android:src="@drawable/wave_back" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="409dp"
+        android:layout_height="230dp"
+        android:layout_gravity="top|center_horizontal"
+        android:layout_marginStart="115dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="110dp"
+        android:contentDescription="Welcome Image"
+        android:src="@drawable/wel_t1" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left|center"
+        android:gravity="left|center_horizontal"
+        android:orientation="vertical"
+        android:padding="12dp"
+        android:background="@android:color/transparent">
+        <TextView
+            android:id="@+id/welcomeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="300dp"
+            android:gravity="left"
+            android:text="Welcome to our\nDocument Scanner!"
+            android:textColor="@android:color/white"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/descriptionText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:gravity="left"
+            android:text="Digitize your paperwork effortlessly\nwith our cutting-edge document\nscanner."
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/tr_nx_one"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="20dp"
+        android:backgroundTint="@android:color/white"
+        android:text="Next"
+        android:textColor="@android:color/holo_purple"
+        android:onClick="onNextButtonClick" />
+
+    </FrameLayout>
+
+</LinearLayout>
