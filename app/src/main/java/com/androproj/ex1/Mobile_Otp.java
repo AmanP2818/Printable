@@ -98,6 +98,6 @@ public class Mobile_Otp extends AppCompatActivity {
                     );
                 }
             }
-        });
+      });
     }
 }

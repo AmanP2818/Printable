@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,14 +7,601 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:gravity="center">
+    android:background="@color/white"
+    android:orientation="vertical">
 
-    <TextView
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_margin="10dp"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_gravity="center"
+            android:src="@drawable/logo"
+            android:layout_height="30dp">
+
+        </ImageView>
+
+        <EditText
+            android:layout_weight="1"
+            android:id="@+id/searchEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Search here..."
+            android:textSize="12sp"
+            android:inputType="text"
+            android:drawableEnd="@android:drawable/ic_menu_search"
+            android:drawablePadding="8dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:paddingLeft="8dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:background="@drawable/search_background"
+            />
+
+    <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Congrats hogaya"
-        android:textStyle="bold"
-        android:textSize="25sp"/>
+        android:layout_gravity="center"
+        android:background="@drawable/favorite_icon"
+        ></ImageButton>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/home_notification"
+            ></ImageButton>
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/home_cover"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                </ImageView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Capture Clarity, Anywhere\nAnytime"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:textAlignment="center"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/imageView2"></TextView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:text="Quick Scan"
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_height="wrap_content">
+
+            </TextView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="10dp"
+                android:gravity="center"
+                >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content">
+
+                    <ImageButton
+                        android:background="@drawable/scan_logo"
+                        android:layout_width="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_height="wrap_content">
+
+                    </ImageButton>
+
+                    <TextView
+                        android:textSize="10sp"
+                        android:textStyle="normal"
+                        android:text="Smart Scan"
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                    </TextView>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="20dp"
+                    android:layout_height="wrap_content">
+
+                    <ImageButton
+                        android:layout_gravity="center"
+                        android:background="@drawable/scan_id"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                    </ImageButton>
+
+                    <TextView
+                        android:textSize="10sp"
+                        android:textStyle="normal"
+                        android:text="ID Card"
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                    </TextView>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="20dp"
+                    android:layout_height="wrap_content">
+
+                    <ImageButton
+                        android:layout_gravity="center"
+                        android:background="@drawable/scan_export_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                    </ImageButton>
+
+                    <TextView
+                        android:textSize="10sp"
+                        android:textStyle="normal"
+                        android:text="Import files"
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                    </TextView>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="20dp"
+                    android:layout_height="wrap_content">
+
+                    <ImageButton
+                        android:layout_gravity="center"
+                        android:background="@drawable/scan_more_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                    </ImageButton>
+
+                    <TextView
+                        android:textSize="10sp"
+                        android:textStyle="normal"
+                        android:text="More"
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                    </TextView>
+
+                </LinearLayout>
 
 
-</RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:padding="10dp"
+                android:background="@drawable/home_folders_background"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:textStyle="bold"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="20sp"
+                        android:text="Folders">
+
+                    </TextView>
+
+                    <Button
+                        android:textSize="12sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:text="+ Create New"
+                        android:textColor="?attr/colorPrimary">
+
+                    </Button>
+
+                </LinearLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="175dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/gridVisible"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="30dp"
+                        android:text="No folders created yet!"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/gridView"
+                        app:layout_constraintStart_toStartOf="@+id/gridView"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                    </TextView>
+
+                    <GridView
+
+                        android:id="@+id/gridView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:rowCount="2"
+                        android:numColumns="2"
+                        android:verticalSpacing="10dp"
+                        android:horizontalSpacing="10dp"
+                        android:padding="10dp" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_margin="10dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Recent Documents"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:layout_weight="1"
+                        >
+
+                    </TextView>
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="View all"
+                        android:textSize="12sp"
+                        android:background="@android:color/transparent"
+                        android:textColor="?attr/colorPrimary">
+
+                    </Button>
+
+
+                </LinearLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <ListView
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:focusableInTouchMode="true"
+                            android:id="@+id/listview"
+                            android:layout_width="match_parent"
+                            android:layout_height="300dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                    </LinearLayout>
+
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_margin="20dp"
+                android:padding="20dp"
+                android:background="@drawable/home_folders_background"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_gravity="center"
+                        android:layout_width="30dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/home_premium_icon">
+
+                    </ImageView>
+                    <TextView
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_marginLeft="10dp"
+                        android:text="Premium Offer">
+
+                    </TextView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+
+                        android:layout_gravity="center"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:background="@drawable/home_premium_logo">
+
+                    </ImageView>
+
+                    <LinearLayout
+                        android:padding="15dp"
+                        android:layout_width="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Benefits"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            >
+
+                        </TextView>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:gravity="center"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:layout_gravity="center"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:background="@android:drawable/ic_input_add"
+                                ></ImageView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Free delivery"
+                                android:textSize="12sp"
+                                android:textColor="@color/material_dynamic_neutral30">
+
+                            </TextView>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:gravity="center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:layout_gravity="center"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:background="@android:drawable/ic_input_add"
+                                ></ImageView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Cash back offer"
+                                android:textSize="12sp"
+                                android:textColor="@color/material_dynamic_neutral30">
+
+                            </TextView>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:gravity="center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:layout_gravity="center"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:background="@android:drawable/ic_input_add"
+                                ></ImageView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="5% off on every order"
+                                android:textSize="12sp"
+                                android:textColor="@color/material_dynamic_neutral30">
+
+                            </TextView>
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:background="#D7C1FF"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_weight="1"
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Invite your friends."
+                        android:textSize="22sp"
+                        android:textColor="?attr/colorPrimary"
+                        android:textStyle="bold">
+
+                    </TextView>
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/home_share_logo">
+
+                    </ImageView>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    android:textColor="?attr/colorPrimary"
+                    android:textSize="16sp"
+                    android:paddingLeft="10dp"
+                    android:text="Discover the easiest way to scan, store and share documents with our new app!"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content">
+
+                </TextView>
+
+                <LinearLayout
+                    android:layout_margin="10dp"
+                    android:paddingLeft="5dp"
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content">
+
+                    <ImageButton
+                        android:layout_weight="1"
+                        android:background="@drawable/facebook"
+                        android:layout_width="0dp"
+                        android:layout_height="35dp">
+
+                    </ImageButton>
+
+                    <ImageButton
+                        android:background="@drawable/whatsapp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="0dp"
+                        android:layout_height="35dp">
+
+                    </ImageButton>
+
+                    <ImageButton
+                        android:background="@drawable/telegram"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_height="35dp">
+
+                    </ImageButton>
+
+                    <ImageButton
+                        android:background="@drawable/instagram"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_height="35dp">
+
+                    </ImageButton>
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+
+
+    </androidx.core.widget.NestedScrollView>
+
+
+
+
+
+
+</LinearLayout>
