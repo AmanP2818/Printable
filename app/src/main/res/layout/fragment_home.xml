@@ -1,0 +1,598 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeFragment">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_margin="@dimen/margin_small"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="@dimen/image_small"
+                android:layout_gravity="center"
+                android:src="@drawable/logo"
+                android:layout_height="@dimen/image_small">
+
+            </ImageView>
+
+            <EditText
+                android:id="@+id/searchEditText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Search here..."
+                android:textSize="@dimen/text_medium"
+                android:inputType="text"
+                android:drawableEnd="@android:drawable/ic_menu_search"
+                android:drawablePadding="@dimen/padding_small"
+                android:layout_marginStart="@dimen/margin_small"
+                android:layout_marginEnd="@dimen/margin_small"
+                android:paddingStart="@dimen/padding_small"
+                android:paddingTop="@dimen/padding_small"
+                android:paddingBottom="@dimen/padding_small"
+                android:background="@drawable/search_background" />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/favorite_icon"
+                android:contentDescription="TODO" />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/margin_small"
+                android:background="@drawable/home_notification"
+                android:contentDescription="TODO" />
+        </LinearLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="wrap_content">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/imageView2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/home_cover"
+                        android:contentDescription="TODO"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                    </ImageView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Capture Clarity, Anywhere\nAnytime"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_xlarge"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/imageView2"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/imageView2" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:text="Quick Scan"
+                    android:layout_width="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_medium"
+                    android:layout_marginTop="@dimen/margin_medium"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:layout_height="wrap_content">
+
+                </TextView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_margin="@dimen/margin_small"
+                    android:gravity="center"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content">
+
+                        <ImageButton
+                            android:background="@drawable/scan_logo"
+                            android:layout_width="@dimen/image_icon_medium"
+                            android:layout_gravity="center"
+                            android:layout_height="@dimen/image_icon_medium"
+                            android:contentDescription="TODO">
+
+                        </ImageButton>
+
+                        <TextView
+                            android:textSize="@dimen/text_small"
+                            android:textStyle="normal"
+                            android:text="Smart Scan"
+                            android:layout_gravity="center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                        </TextView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="20dp"
+                        android:layout_height="wrap_content">
+
+                        <ImageButton
+                            android:layout_gravity="center"
+                            android:background="@drawable/scan_id"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                        </ImageButton>
+
+                        <TextView
+                            android:textSize="@dimen/text_small"
+                            android:textStyle="normal"
+                            android:text="ID Card"
+                            android:layout_gravity="center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                        </TextView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginStart="@dimen/margin_medium"
+                        android:layout_height="wrap_content">
+
+                        <ImageButton
+                            android:layout_gravity="center"
+                            android:background="@drawable/scan_export_icon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                        </ImageButton>
+
+                        <TextView
+                            android:textSize="@dimen/text_small"
+                            android:textStyle="normal"
+                            android:text="Import files"
+                            android:layout_gravity="center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                        </TextView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="@dimen/margin_medium"
+                        android:layout_height="wrap_content">
+
+                        <ImageButton
+                            android:layout_gravity="center"
+                            android:background="@drawable/scan_more_icon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                        </ImageButton>
+
+                        <TextView
+                            android:textSize="@dimen/text_small"
+                            android:textStyle="normal"
+                            android:text="More"
+                            android:layout_gravity="center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                        </TextView>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_small"
+                    android:padding="@dimen/padding_small"
+                    android:background="@drawable/home_folders_background"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:textStyle="bold"
+                            android:layout_marginStart="@dimen/margin_small"
+                            android:layout_weight="1"
+                            android:layout_gravity="center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/text_large"
+                            android:text="Folders">
+
+                        </TextView>
+
+                        <Button
+                            android:id="@+id/add_folders"
+                            android:textSize="12sp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            android:text="+ Create New"
+                            android:textColor="?attr/colorPrimary">
+
+                        </Button>
+
+                    </LinearLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="175dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/gridVisible"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="30dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="@+id/gridView"
+                            app:layout_constraintStart_toStartOf="@+id/gridView"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                        </TextView>
+
+                        <GridView
+
+                            android:id="@+id/gridView"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:rowCount="2"
+                            android:numColumns="2"
+                            android:verticalSpacing="10dp"
+                            android:horizontalSpacing="10dp"
+                            android:padding="10dp" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_margin="10dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_marginLeft="@dimen/margin_small"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Recent Documents"
+                            android:textSize="@dimen/text_large"
+                            android:textStyle="bold"
+                            android:layout_weight="1">
+
+                        </TextView>
+
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="View all"
+                            android:background="@android:color/transparent"
+                            android:textColor="?attr/colorPrimary"
+                            android:layout_marginLeft="@dimen/margin_small"
+                            android:textSize="@dimen/text_medium">
+
+                        </Button>
+
+
+                    </LinearLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <ListView
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:focusableInTouchMode="true"
+                                android:id="@+id/listview"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/listview_height"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+
+                        </LinearLayout>
+
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_margin="@dimen/margin_medium"
+                    android:padding="@dimen/padding_medium"
+                    android:background="@drawable/home_folders_background"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:orientation="horizontal">
+                        <ImageView
+                            android:layout_gravity="center"
+                            android:layout_width="@dimen/image_small"
+                            android:layout_height="@dimen/image_medium"
+                            android:background="@drawable/home_premium_icon">
+
+                        </ImageView>
+                        <TextView
+                            android:layout_gravity="center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/text_large"
+                            android:textStyle="bold"
+                            android:layout_marginLeft="@dimen/margin_small"
+                            android:text="Premium Offer">
+
+                        </TextView>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+
+                            android:layout_gravity="center"
+                            android:layout_width="@dimen/image_large"
+                            android:layout_height="@dimen/image_large"
+                            android:background="@drawable/home_premium_logo">
+
+                        </ImageView>
+
+                        <LinearLayout
+                            android:padding="@dimen/padding_medium"
+                            android:layout_width="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Benefits"
+                                android:textSize="@dimen/text_medium"
+                                android:textStyle="bold"
+                                >
+
+                            </TextView>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:gravity="center"
+                                android:layout_height="wrap_content">
+
+                                <ImageView
+                                    android:layout_gravity="center"
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:background="@android:drawable/ic_input_add" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Free delivery"
+                                    android:textSize="@dimen/text_small">
+
+                                </TextView>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:gravity="center"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <ImageView
+                                    android:layout_gravity="center"
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:background="@android:drawable/ic_input_add" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Cash back offer"
+                                    android:textSize="@dimen/text_small">
+
+                                </TextView>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:gravity="center"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <ImageView
+                                    android:layout_gravity="center"
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:background="@android:drawable/ic_input_add"
+                                    android:contentDescription="TODO" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="5% off on every order"
+                                    android:textSize="@dimen/text_small">
+
+                                </TextView>
+                            </LinearLayout>
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:background="#D7C1FF"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_marginTop="@dimen/margin_small"
+                        android:layout_marginLeft="@dimen/margin_medium"
+                        android:layout_marginRight="@dimen/margin_medium"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_weight="1"
+                            android:layout_gravity="center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Invite your friends."
+                            android:textSize="@dimen/text_xlarge"
+                            android:textColor="?attr/colorPrimary"
+                            android:textStyle="bold">
+
+                        </TextView>
+
+                        <ImageView
+                            android:layout_width="@dimen/button_width"
+                            android:layout_height="@dimen/button_width"
+                            android:background="@drawable/home_share_logo">
+
+                        </ImageView>
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_marginLeft="@dimen/margin_small"
+                        android:textColor="?attr/colorPrimary"
+                        android:textSize="@dimen/text_large"
+                        android:paddingLeft="@dimen/padding_small"
+                        android:text="Discover the easiest way to scan, store and share documents with our new app!"
+                        android:layout_width="250dp"
+                        android:layout_height="wrap_content">
+
+                    </TextView>
+
+                    <LinearLayout
+                        android:layout_margin="@dimen/margin_small"
+                        android:paddingLeft="@dimen/padding_small"
+                        android:layout_width="180dp"
+                        android:layout_height="wrap_content">
+
+                        <ImageButton
+                            android:layout_weight="1"
+                            android:background="@drawable/facebook"
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/button_height" >
+
+                        </ImageButton>
+
+                        <ImageButton
+                            android:background="@drawable/whatsapp"
+                            android:layout_weight="1"
+                            android:layout_marginLeft="@dimen/button_margin"
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/button_height">
+
+                        </ImageButton>
+
+                        <ImageButton
+                            android:background="@drawable/telegram"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_marginLeft="@dimen/button_margin"
+                            android:layout_height="@dimen/button_height">
+
+                        </ImageButton>
+
+                        <ImageButton
+                            android:background="@drawable/instagram"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_marginLeft="@dimen/button_margin"
+                            android:layout_height="@dimen/button_height">
+
+                        </ImageButton>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+
+
+
+
+    </LinearLayout>
+
+</FrameLayout>

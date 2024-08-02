@@ -53,6 +53,9 @@ public class Mobile_Otp extends AppCompatActivity {
             public void onClick(View v) {
                 String phoneNumberres = phoneNumberEditText.getText().toString().trim();
 
+//                Intent verifyIn = new Intent(getApplicationContext(), MainActivity.class);
+//                startActivity(verifyIn);
+
                 if (TextUtils.isEmpty(phoneNumberres)) {
                     Toast.makeText(Mobile_Otp.this, "Please Enter Your Phone Number", Toast.LENGTH_SHORT).show();
                     phoneNumberEditText.setError("Phone Number is Required");
