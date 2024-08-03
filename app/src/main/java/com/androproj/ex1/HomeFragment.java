@@ -1,18 +1,13 @@
 package com.androproj.ex1;
 
-import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;
-import android.content.pm.PackageManager;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AlertDialog;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import android.text.InputType;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,6 +33,7 @@ public class HomeFragment extends Fragment {
     private ArrayList<String> items;
     private ArrayList<Integer> images;
     private ArrayList<String> subText;
+    private ArrayList<Integer> fav;
     private TextView gridVisible;
     private HomeGridAdapter homeGridAdapter;
     private HomeListAdapter homeListAdapter;
@@ -54,6 +50,7 @@ public class HomeFragment extends Fragment {
         items = new ArrayList<>();
         images = new ArrayList<>();
         subText = new ArrayList<>();
+        fav = new ArrayList<>();
 
         add_folders = view.findViewById(R.id.add_folders);
         add_folders.setOnClickListener(new View.OnClickListener() {
@@ -64,7 +61,7 @@ public class HomeFragment extends Fragment {
         });
 
         gridView = view.findViewById(R.id.gridView);
-        homeGridAdapter = new HomeGridAdapter(getContext(), items, images, subText);
+        homeGridAdapter = new HomeGridAdapter(getContext(), items, images, subText,fav);
         gridView.setAdapter(homeGridAdapter);
 
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -76,10 +73,10 @@ public class HomeFragment extends Fragment {
         });
 
         itemList = new ArrayList<>();
-        itemList.add(new RecentDocuments(R.drawable.scan_export_icon, "Title 1", "Subtitle 1", R.drawable.favorite_icon));
-        itemList.add(new RecentDocuments(R.drawable.scan_id, "Title 2", "Subtitle 2", R.drawable.favorite_icon));
-        itemList.add(new RecentDocuments(R.drawable.scan_logo, "Title 3", "Subtitle 3", R.drawable.favorite_icon));
-        itemList.add(new RecentDocuments(R.drawable.scan_more_icon, "Title 4", "Subtitle 4", R.drawable.favorite_icon));
+        itemList.add(new RecentDocuments(R.drawable.pdf, "Title 1", "Subtitle 1", R.drawable.more));
+        itemList.add(new RecentDocuments(R.drawable.excel, "Title 2", "Subtitle 2", R.drawable.more));
+        itemList.add(new RecentDocuments(R.drawable.excel, "Title 3", "Subtitle 3", R.drawable.more));
+        itemList.add(new RecentDocuments(R.drawable.pdf, "Title 4", "Subtitle 4", R.drawable.more));
 
         listView = view.findViewById(R.id.listview);
         homeListAdapter = new HomeListAdapter(getContext(), itemList);
@@ -140,9 +137,10 @@ public class HomeFragment extends Fragment {
 //                Toast.makeText(this, "Folder already exists", Toast.LENGTH_SHORT).show();
 //            }
 //        }
-        images.add(R.drawable.scan_export_icon);
+        images.add(R.drawable.folders);
         items.add(name);
         subText.add("Size 5MB");
+        fav.add(R.drawable.favorite_icon);
         homeGridAdapter.notifyDataSetChanged();
     }
 }

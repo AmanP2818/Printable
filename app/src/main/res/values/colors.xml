@@ -7,4 +7,6 @@
     <color name="purple">#6B47DC</color>
     <color name="light_gray">#D8D8D8</color>
     <color name="purple_transparent">#80000000</color>
+
+    <color name="main_dark">#C8ABFA</color>
 </resources>

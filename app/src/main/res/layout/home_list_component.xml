@@ -8,8 +8,8 @@
 
     <ImageView
         android:id="@+id/item_image"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginEnd="10dp"
         android:src="@drawable/ic_launcher_foreground" />
 
@@ -20,19 +20,21 @@
         android:orientation="vertical">
 
         <TextView
+            android:fontFamily="@font/poppins_regular"
             android:id="@+id/item_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Title"
-            android:textSize="16sp"
+            android:textSize="@dimen/text_large"
             android:textStyle="bold" />
 
         <TextView
+            android:fontFamily="@font/poppins_regular"
             android:id="@+id/item_subtitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Subtitle"
-            android:textSize="14sp" />
+            android:textSize="@dimen/text_medium" />
     </LinearLayout>
 
     <ImageButton

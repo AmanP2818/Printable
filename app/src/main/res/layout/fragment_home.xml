@@ -27,6 +27,7 @@
             </ImageView>
 
             <EditText
+                android:fontFamily="@font/poppins_semibold"
                 android:id="@+id/searchEditText"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -41,6 +42,7 @@
                 android:paddingStart="@dimen/padding_small"
                 android:paddingTop="@dimen/padding_small"
                 android:paddingBottom="@dimen/padding_small"
+                android:textStyle="bold"
                 android:background="@drawable/search_background" />
 
             <ImageButton
@@ -87,6 +89,7 @@
                     </ImageView>
 
                     <TextView
+                        android:fontFamily="@font/poppins_regular"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Capture Clarity, Anywhere\nAnytime"
@@ -105,8 +108,9 @@
                     android:layout_width="wrap_content"
                     android:layout_marginLeft="@dimen/margin_medium"
                     android:layout_marginTop="@dimen/margin_medium"
-                    android:textSize="16sp"
+                    android:textSize="@dimen/text_large"
                     android:textStyle="bold"
+                    android:fontFamily="@font/poppins_regular"
                     android:layout_height="wrap_content">
 
                 </TextView>
@@ -135,6 +139,7 @@
                         </ImageButton>
 
                         <TextView
+                            android:fontFamily="@font/poppins_regular"
                             android:textSize="@dimen/text_small"
                             android:textStyle="normal"
                             android:text="Smart Scan"
@@ -162,6 +167,7 @@
                         </ImageButton>
 
                         <TextView
+                            android:fontFamily="@font/poppins_regular"
                             android:textSize="@dimen/text_small"
                             android:textStyle="normal"
                             android:text="ID Card"
@@ -189,6 +195,7 @@
                         </ImageButton>
 
                         <TextView
+                            android:fontFamily="@font/poppins_regular"
                             android:textSize="@dimen/text_small"
                             android:textStyle="normal"
                             android:text="Import files"
@@ -216,6 +223,7 @@
                         </ImageButton>
 
                         <TextView
+                            android:fontFamily="@font/poppins_regular"
                             android:textSize="@dimen/text_small"
                             android:textStyle="normal"
                             android:text="More"
@@ -245,14 +253,16 @@
                             android:layout_marginStart="@dimen/margin_small"
                             android:layout_weight="1"
                             android:layout_gravity="center"
+                            android:fontFamily="@font/poppins_regular"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="@dimen/text_large"
+                            android:textSize="@dimen/text_xlarge"
                             android:text="Folders">
 
                         </TextView>
 
                         <Button
+                            android:fontFamily="@font/poppins_regular"
                             android:id="@+id/add_folders"
                             android:textSize="12sp"
                             android:layout_width="wrap_content"
@@ -289,11 +299,15 @@
                             android:id="@+id/gridView"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:rowCount="2"
-                            android:numColumns="2"
-                            android:verticalSpacing="10dp"
                             android:horizontalSpacing="10dp"
-                            android:padding="10dp" />
+                            android:numColumns="2"
+                            android:padding="10dp"
+                            android:rowCount="2"
+                            android:verticalSpacing="10dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
 
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -317,6 +331,7 @@
                             android:layout_height="wrap_content"
                             android:text="Recent Documents"
                             android:textSize="@dimen/text_large"
+                            android:fontFamily="@font/poppins_regular"
                             android:textStyle="bold"
                             android:layout_weight="1">
 
@@ -326,6 +341,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="View all"
+                            android:fontFamily="@font/poppins_regular"
                             android:background="@android:color/transparent"
                             android:textColor="?attr/colorPrimary"
                             android:layout_marginLeft="@dimen/margin_small"
@@ -387,12 +403,13 @@
                         android:orientation="horizontal">
                         <ImageView
                             android:layout_gravity="center"
-                            android:layout_width="@dimen/image_small"
-                            android:layout_height="@dimen/image_medium"
+                            android:layout_width="20dp"
+                            android:layout_height="26dp"
                             android:background="@drawable/home_premium_icon">
 
                         </ImageView>
                         <TextView
+                            android:fontFamily="@font/poppins_regular"
                             android:layout_gravity="center"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -425,6 +442,7 @@
                             android:layout_height="wrap_content">
 
                             <TextView
+                                android:fontFamily="@font/poppins_regular"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Benefits"
@@ -446,6 +464,7 @@
                                     android:background="@android:drawable/ic_input_add" />
 
                                 <TextView
+                                    android:fontFamily="@font/poppins_regular"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="Free delivery"
@@ -466,6 +485,7 @@
                                     android:background="@android:drawable/ic_input_add" />
 
                                 <TextView
+                                    android:fontFamily="@font/poppins_regular"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="Cash back offer"
@@ -487,6 +507,7 @@
                                     android:contentDescription="TODO" />
 
                                 <TextView
+                                    android:fontFamily="@font/poppins_regular"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="5% off on every order"
@@ -514,6 +535,7 @@
                         android:orientation="horizontal">
 
                         <TextView
+                            android:fontFamily="@font/poppins_regular"
                             android:layout_weight="1"
                             android:layout_gravity="center"
                             android:layout_width="wrap_content"
@@ -534,12 +556,13 @@
                     </LinearLayout>
 
                     <TextView
+                        android:fontFamily="@font/poppins_regular"
                         android:layout_marginLeft="@dimen/margin_small"
                         android:textColor="?attr/colorPrimary"
-                        android:textSize="@dimen/text_large"
+                        android:textSize="@dimen/text_medium"
                         android:paddingLeft="@dimen/padding_small"
                         android:text="Discover the easiest way to scan, store and share documents with our new app!"
-                        android:layout_width="250dp"
+                        android:layout_width="280dp"
                         android:layout_height="wrap_content">
 
                     </TextView>
@@ -594,5 +617,16 @@
 
 
     </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatinghome"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/button_margin"
+        android:src="@drawable/baseline_photo_camera_24"
+        android:background="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    </com.google.android.material.floatingactionbutton.FloatingActionButton>
 
 </FrameLayout>
