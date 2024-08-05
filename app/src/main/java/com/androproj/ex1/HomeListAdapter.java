@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -58,6 +59,13 @@ public class HomeListAdapter extends BaseAdapter {
         itemTitle.setFocusable(false);
         itemSubtitle.setFocusable(false);
         itemIcon.setFocusable(false);
+
+        itemIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(view.getContext(), "More : " +item.getTitle(), Toast.LENGTH_LONG).show();
+            }
+        });
 
         return convertView;
     }

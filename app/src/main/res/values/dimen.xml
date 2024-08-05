@@ -35,6 +35,7 @@
     <dimen name="grid_spacing">10dp</dimen>
     <dimen name="grid_padding">10dp</dimen>
 
+    <dimen name="image_icon_xsmall">15dp</dimen>
     <dimen name="image_icon_small">30dp</dimen>
     <dimen name="image_icon_medium">50dp</dimen>
     <dimen name="image_icon_large">80dp</dimen>
