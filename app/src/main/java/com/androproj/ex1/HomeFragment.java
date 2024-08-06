@@ -126,7 +126,6 @@ public class HomeFragment extends Fragment {
         input.setInputType(InputType.TYPE_CLASS_TEXT);
         input.setHint("Name of Folder");
         input.setLayoutParams(params);
-        input.fon
         container.addView(input);
 
         builder.setView(container);
