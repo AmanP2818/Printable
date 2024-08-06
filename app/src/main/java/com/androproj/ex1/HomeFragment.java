@@ -19,6 +19,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.GridView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -36,17 +37,13 @@ public class HomeFragment extends Fragment {
     String enteredPno;
     Button add_folders;
     private GridView gridView;
-    private ArrayList<String> items;
-    private ArrayList<Integer> images;
-    private ArrayList<String> subText;
-    private ArrayList<Boolean> fav;
-    private ArrayList<String> path;
 
     private TextView gridVisible;
     private HomeGridAdapter homeGridAdapter;
     private HomeListAdapter homeListAdapter;
     private List<RecentDocuments> itemList;
     private ListView listView;
+    private List<Folders> folders;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -56,11 +53,7 @@ public class HomeFragment extends Fragment {
         gridVisible = view.findViewById(R.id.gridVisible);
         requestStoragePermissions();
 
-        items = new ArrayList<>();
-        images = new ArrayList<>();
-        subText = new ArrayList<>();
-        fav = new ArrayList<>();
-        path = new ArrayList<>();
+        folders = new ArrayList<>();
 
         add_folders = view.findViewById(R.id.add_folders);
         add_folders.setOnClickListener(new View.OnClickListener() {
@@ -71,7 +64,7 @@ public class HomeFragment extends Fragment {
         });
 
         gridView = view.findViewById(R.id.gridView);
-        homeGridAdapter = new HomeGridAdapter(getContext(), items, images, subText,fav,path);
+        homeGridAdapter = new HomeGridAdapter(getContext(),folders);
         gridView.setAdapter(homeGridAdapter);
 
         loadDirectories();
@@ -79,8 +72,8 @@ public class HomeFragment extends Fragment {
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String clickedItem = (String) parent.getItemAtPosition(position);
-                Toast.makeText(getContext(), "Clicked: " + clickedItem, Toast.LENGTH_SHORT).show();
+                Folders clickedItem = (Folders) parent.getItemAtPosition(position);
+                Toast.makeText(getContext(), "Clicked: " + clickedItem.getTitle(), Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -93,10 +86,10 @@ public class HomeFragment extends Fragment {
         });
 
         itemList = new ArrayList<>();
-        itemList.add(new RecentDocuments(R.drawable.pdf, "Title 1", "Subtitle 1", R.drawable.more));
-        itemList.add(new RecentDocuments(R.drawable.excel, "Title 2", "Subtitle 2", R.drawable.more));
-        itemList.add(new RecentDocuments(R.drawable.excel, "Title 3", "Subtitle 3", R.drawable.more));
-        itemList.add(new RecentDocuments(R.drawable.pdf, "Title 4", "Subtitle 4", R.drawable.more));
+        itemList.add(new RecentDocuments(R.drawable.pdf, "Title 1", "Subtitle 1", R.drawable.more,""));
+        itemList.add(new RecentDocuments(R.drawable.excel, "Title 2", "Subtitle 2", R.drawable.more,""));
+        itemList.add(new RecentDocuments(R.drawable.excel, "Title 3", "Subtitle 3", R.drawable.more,""));
+        itemList.add(new RecentDocuments(R.drawable.pdf, "Title 4", "Subtitle 4", R.drawable.more,""));
 
         listView = view.findViewById(R.id.listview);
         homeListAdapter = new HomeListAdapter(getContext(), itemList);
@@ -118,10 +111,25 @@ public class HomeFragment extends Fragment {
     private void showAddFolderDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
         builder.setTitle("Add New Folder");
+        builder.setIcon(R.drawable.folders);
+        builder.setMessage("Enter name of the new folder below here.");
+
+        FrameLayout container = new FrameLayout(getContext());
+        FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT
+        );
+        params.leftMargin = getResources().getDimensionPixelSize(R.dimen.margin_medium);
+        params.rightMargin = getResources().getDimensionPixelSize(R.dimen.margin_medium);
 
         final EditText input = new EditText(getContext());
         input.setInputType(InputType.TYPE_CLASS_TEXT);
-        builder.setView(input);
+        input.setHint("Name of Folder");
+        input.setLayoutParams(params);
+        input.fon
+        container.addView(input);
+
+        builder.setView(container);
 
         builder.setPositiveButton("Add", new DialogInterface.OnClickListener() {
             @Override
@@ -142,22 +150,19 @@ public class HomeFragment extends Fragment {
 
     private void loadDirectories() {
         File rootDir = requireContext().getExternalFilesDir(null);
+        assert rootDir != null;
         File[] files = rootDir.listFiles();
         if (files != null) {
             for (File file : files) {
                 if (file.isDirectory()) {
                     long size = getDirectorySize(file);
                     String sizeInString = android.text.format.Formatter.formatFileSize(getContext(), size);
-                    items.add(file.getName());
-                    subText.add(sizeInString);
-                    images.add(R.drawable.folders);
-                    path.add(file.getAbsolutePath());
                     File favFile = new File(file, ".favorite");
-                    fav.add(favFile.exists());
+                    folders.add(new Folders(file.getName(),R.drawable.folders, sizeInString,favFile.exists(), file.getAbsolutePath()));
                 }
             }
         }
-        if(!items.isEmpty()){
+        if(!folders.isEmpty()){
             gridVisible.setText("");
         }else{
             gridVisible.setText("No folders added yet!");
@@ -180,11 +185,8 @@ public class HomeFragment extends Fragment {
                 Toast.makeText(requireContext(), "Directory created successfully", Toast.LENGTH_SHORT).show();
                 long size = getDirectorySize(directory);
                 String sizeString = android.text.format.Formatter.formatFileSize(getContext(), size);
-                images.add(R.drawable.folders);
-                items.add(name);
-                subText.add(sizeString);
-                fav.add(false);
-                if(!items.isEmpty()){
+                folders.add(new Folders(directory.getName(),R.drawable.folders, sizeString,false, directory.getAbsolutePath()));
+                if(!folders.isEmpty()){
                     gridVisible.setText("");
                 }else{
                     gridVisible.setText("No folders added yet!");
@@ -219,17 +221,14 @@ public class HomeFragment extends Fragment {
     }
 
     private void deleteDirectory(int position) {
-        String directoryName = items.get(position);
+        String directoryName = folders.get(position).getTitle();
         File directory = new File(requireContext().getExternalFilesDir(null), directoryName);
         if (directory.exists() && directory.isDirectory()) {
             boolean result = deleteRecursively(directory);
             if (result) {
                 Toast.makeText(requireContext(), "Directory deleted successfully", Toast.LENGTH_SHORT).show();
-                items.remove(position);
-                images.remove(position);
-                fav.remove(position);
-                subText.remove(position);
-                if(!items.isEmpty()){
+                folders.remove(position);
+                if(!folders.isEmpty()){
                     gridVisible.setText("");
                 }else{
                     gridVisible.setText("No folders added yet!");

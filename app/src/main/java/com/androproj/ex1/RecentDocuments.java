@@ -5,12 +5,14 @@ public class RecentDocuments {
     private String title;
     private String subtitle;
     private int iconResource;
+    private String path;
 
-    public RecentDocuments(int imageResource, String title, String subtitle, int iconResource) {
+    public RecentDocuments(int imageResource, String title, String subtitle, int iconResource, String path) {
         this.imageResource = imageResource;
         this.title = title;
         this.subtitle = subtitle;
         this.iconResource = iconResource;
+        this.path = path;
     }
 
     public int getImageResource() {
@@ -27,5 +29,9 @@ public class RecentDocuments {
 
     public int getIconResource() {
         return iconResource;
+    }
+
+    public String getPath(){
+        return path;
     }
 }
