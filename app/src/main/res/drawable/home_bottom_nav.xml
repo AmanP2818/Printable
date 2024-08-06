@@ -3,7 +3,7 @@
     <!-- Background color layer -->
     <item>
         <shape android:shape="rectangle">
-            <solid android:color="#D7C1FF"/> <!-- Light purple color -->
+            <solid android:color="#212121"/> <!-- Light purple color -->
             <corners
                 android:radius="0dp">
 

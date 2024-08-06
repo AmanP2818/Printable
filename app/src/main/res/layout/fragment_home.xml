@@ -27,6 +27,7 @@
             </ImageView>
 
             <EditText
+                android:textColor="@color/black"
                 android:fontFamily="@font/poppins_semibold"
                 android:id="@+id/searchEditText"
                 android:layout_width="0dp"
@@ -104,6 +105,7 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <TextView
+                    android:textColor="@color/black"
                     android:text="Quick Scan"
                     android:layout_width="wrap_content"
                     android:layout_marginLeft="@dimen/margin_medium"
@@ -139,6 +141,7 @@
                         </ImageButton>
 
                         <TextView
+                            android:textColor="@color/black"
                             android:fontFamily="@font/poppins_regular"
                             android:textSize="@dimen/text_small"
                             android:textStyle="normal"
@@ -167,6 +170,7 @@
                         </ImageButton>
 
                         <TextView
+                            android:textColor="@color/black"
                             android:fontFamily="@font/poppins_regular"
                             android:textSize="@dimen/text_small"
                             android:textStyle="normal"
@@ -195,6 +199,7 @@
                         </ImageButton>
 
                         <TextView
+                            android:textColor="@color/black"
                             android:fontFamily="@font/poppins_regular"
                             android:textSize="@dimen/text_small"
                             android:textStyle="normal"
@@ -223,6 +228,7 @@
                         </ImageButton>
 
                         <TextView
+                            android:textColor="@color/black"
                             android:fontFamily="@font/poppins_regular"
                             android:textSize="@dimen/text_small"
                             android:textStyle="normal"
@@ -249,6 +255,7 @@
                         android:layout_height="wrap_content">
 
                         <TextView
+                            android:textColor="@color/black"
                             android:textStyle="bold"
                             android:layout_marginStart="@dimen/margin_small"
                             android:layout_weight="1"
@@ -269,7 +276,7 @@
                             android:layout_height="wrap_content"
                             android:background="@android:color/transparent"
                             android:text="+ Create New"
-                            android:textColor="?attr/colorPrimary">
+                            android:textColor="@color/purple">
 
                         </Button>
 
@@ -298,6 +305,7 @@
                             app:layout_constraintTop_toTopOf="parent" />
 
                         <TextView
+                            android:textColor="@color/black"
                             android:text="No folders added yet!"
                             android:fontFamily="@font/poppins_regular"
                             android:textSize="@dimen/text_medium"
@@ -331,6 +339,7 @@
                         android:orientation="horizontal">
 
                         <TextView
+                            android:textColor="@color/black"
                             android:layout_marginLeft="@dimen/margin_small"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -348,7 +357,7 @@
                             android:text="View all"
                             android:fontFamily="@font/poppins_regular"
                             android:background="@android:color/transparent"
-                            android:textColor="?attr/colorPrimary"
+                            android:textColor="@color/purple"
                             android:layout_marginLeft="@dimen/margin_small"
                             android:textSize="@dimen/text_medium">
 
@@ -414,6 +423,7 @@
 
                         </ImageView>
                         <TextView
+                            android:textColor="@color/black"
                             android:fontFamily="@font/poppins_regular"
                             android:layout_gravity="center"
                             android:layout_width="wrap_content"
@@ -469,6 +479,7 @@
                                     android:background="@android:drawable/ic_input_add" />
 
                                 <TextView
+                                    android:textColor="@color/black"
                                     android:fontFamily="@font/poppins_regular"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
@@ -490,6 +501,7 @@
                                     android:background="@android:drawable/ic_input_add" />
 
                                 <TextView
+                                    android:textColor="@color/black"
                                     android:fontFamily="@font/poppins_regular"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
@@ -512,6 +524,7 @@
                                     android:contentDescription="TODO" />
 
                                 <TextView
+                                    android:textColor="@color/black"
                                     android:fontFamily="@font/poppins_regular"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
@@ -526,7 +539,7 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:background="#D7C1FF"
+                    android:background="@color/light_purple"
                     android:orientation="vertical"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
@@ -547,7 +560,7 @@
                             android:layout_height="wrap_content"
                             android:text="Invite your friends."
                             android:textSize="@dimen/text_xlarge"
-                            android:textColor="?attr/colorPrimary"
+                            android:textColor="@color/purple"
                             android:textStyle="bold">
 
                         </TextView>
@@ -563,7 +576,7 @@
                     <TextView
                         android:fontFamily="@font/poppins_regular"
                         android:layout_marginLeft="@dimen/margin_small"
-                        android:textColor="?attr/colorPrimary"
+                        android:textColor="@color/purple"
                         android:textSize="@dimen/text_medium"
                         android:paddingLeft="@dimen/padding_small"
                         android:text="Discover the easiest way to scan, store and share documents with our new app!"
