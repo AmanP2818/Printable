@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "ex1"
+rootProject.name = "welcome_tour_one"
 include(":app")
  
