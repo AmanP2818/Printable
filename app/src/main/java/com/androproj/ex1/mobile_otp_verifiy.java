@@ -2,6 +2,7 @@ package com.androproj.ex1;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.nfc.Tag;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.text.Editable;
@@ -84,10 +85,15 @@ public class mobile_otp_verifiy extends AppCompatActivity {
 
                     FirebaseAuth.getInstance().signInWithCredential(phoneAuthCredential)
                             .addOnCompleteListener(task -> {
+
                                 progress_bar_verify.setVisibility(View.GONE);
                                 verify_button.setVisibility(View.VISIBLE);
 
                                 if (task.isSuccessful()) {
+//                                    Intent mainIntent = new Intent(mobile_otp_verifiy.this, verifying_animation.class);
+//                                    mainIntent.putExtra("mobile", phoneNumber);
+//                                    mainIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+//                                    startActivity(mainIntent);
                                     checkIfUserExists();
                                 } else {
                                     Toast.makeText(mobile_otp_verifiy.this, "Enter Correct OTP", Toast.LENGTH_SHORT).show();

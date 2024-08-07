@@ -40,6 +40,7 @@ public class app_tour_three extends AppCompatActivity {
             public void onClick(View v) {
                 Intent next=new Intent(app_tour_three.this, MainActivity.class);
                 next.putExtra("mobile", phoneNumber);
+                next.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(next);
             }
         });

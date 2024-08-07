@@ -42,6 +42,9 @@ public class ver_two extends AppCompatActivity {
         BtnContinueVer_2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+//                Intent intent = new Intent(ver_two.this, Enter_details.class);
+//                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+//                startActivity(intent);
                 checkIfUserExists();
             }
         });

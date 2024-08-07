@@ -52,54 +52,54 @@ public class Mobile_Otp extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String phoneNumberres = phoneNumberEditText.getText().toString().trim();
+//
+//                Intent verifyIn = new Intent(getApplicationContext(), MainActivity.class);
+//                startActivity(verifyIn);
 
-                Intent verifyIn = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(verifyIn);
+                if (TextUtils.isEmpty(phoneNumberres)) {
+                    Toast.makeText(Mobile_Otp.this, "Please Enter Your Phone Number", Toast.LENGTH_SHORT).show();
+                    phoneNumberEditText.setError("Phone Number is Required");
+                    phoneNumberEditText.requestFocus();
+                } else if (phoneNumberres.length() != 10) {
+                    Toast.makeText(Mobile_Otp.this, "Please Re-enter your mobile Number", Toast.LENGTH_SHORT).show();
+                    phoneNumberEditText.setError("Phone Number 10 digits is req");
+                    phoneNumberEditText.requestFocus();
+                } else if (!termsCheckBox.isChecked()) {
+                    Toast.makeText(Mobile_Otp.this, "Please accept the Terms and Conditions", Toast.LENGTH_SHORT).show();
+                } else {
+                    progress_bar_otp.setVisibility(View.VISIBLE);
+                    getOtpButton.setVisibility(View.INVISIBLE);
 
-//                if (TextUtils.isEmpty(phoneNumberres)) {
-//                    Toast.makeText(Mobile_Otp.this, "Please Enter Your Phone Number", Toast.LENGTH_SHORT).show();
-//                    phoneNumberEditText.setError("Phone Number is Required");
-//                    phoneNumberEditText.requestFocus();
-//                } else if (phoneNumberres.length() != 10) {
-//                    Toast.makeText(Mobile_Otp.this, "Please Re-enter your mobile Number", Toast.LENGTH_SHORT).show();
-//                    phoneNumberEditText.setError("Phone Number 10 digits is req");
-//                    phoneNumberEditText.requestFocus();
-//                } else if (!termsCheckBox.isChecked()) {
-//                    Toast.makeText(Mobile_Otp.this, "Please accept the Terms and Conditions", Toast.LENGTH_SHORT).show();
-//                } else {
-//                    progress_bar_otp.setVisibility(View.VISIBLE);
-//                    getOtpButton.setVisibility(View.INVISIBLE);
-//
-//                    PhoneAuthProvider.getInstance().verifyPhoneNumber(
-//                            "+91" + phoneNumberres,
-//                            60,
-//                            TimeUnit.SECONDS,
-//                            Mobile_Otp.this,
-//                            new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
-//                                @Override
-//                                public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
-//                                    // Auto verification completed
-//                                }
-//
-//                                @Override
-//                                public void onVerificationFailed(@NonNull FirebaseException e) {
-//                                    progress_bar_otp.setVisibility(View.GONE);
-//                                    getOtpButton.setVisibility(View.VISIBLE);
-//                                    Toast.makeText(Mobile_Otp.this, e.getMessage(), Toast.LENGTH_SHORT).show();
-//                                }
-//
-//                                @Override
-//                                public void onCodeSent(@NonNull String backendOtp, @NonNull PhoneAuthProvider.ForceResendingToken forceResendingToken) {
-//                                    progress_bar_otp.setVisibility(View.GONE);
-//                                    getOtpButton.setVisibility(View.VISIBLE);
-//                                    Intent verifyIn = new Intent(getApplicationContext(), mobile_otp_verifiy.class);
-//                                    verifyIn.putExtra("mobile", phoneNumberres);
-//                                    verifyIn.putExtra("backendOtp", backendOtp);
-//                                    startActivity(verifyIn);
-//                                }
-//                            }
-//                    );
-//                }
+                    PhoneAuthProvider.getInstance().verifyPhoneNumber(
+                            "+91" + phoneNumberres,
+                            60,
+                            TimeUnit.SECONDS,
+                            Mobile_Otp.this,
+                            new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
+                                @Override
+                                public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
+                                    // Auto verification completed
+                                }
+
+                                @Override
+                                public void onVerificationFailed(@NonNull FirebaseException e) {
+                                    progress_bar_otp.setVisibility(View.GONE);
+                                    getOtpButton.setVisibility(View.VISIBLE);
+                                    Toast.makeText(Mobile_Otp.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                                }
+
+                                @Override
+                                public void onCodeSent(@NonNull String verificationCode, @NonNull PhoneAuthProvider.ForceResendingToken forceResendingToken) {
+                                    progress_bar_otp.setVisibility(View.GONE);
+                                    getOtpButton.setVisibility(View.VISIBLE);
+                                    Intent verifyIn = new Intent(getApplicationContext(), mobile_otp_verifiy.class);
+                                    verifyIn.putExtra("mobile", phoneNumberres);
+                                    verifyIn.putExtra("backendOtp", verificationCode);
+                                    startActivity(verifyIn);
+                                }
+                            }
+                    );
+                }
             }
       });
     }

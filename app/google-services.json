@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "184729857701",
-    "project_id": "printableaman",
-    "storage_bucket": "printableaman.appspot.com"
+    "project_number": "672384507335",
+    "project_id": "mini-ride",
+    "storage_bucket": "mini-ride.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:184729857701:android:291164ce0a2b734b91274c",
+        "mobilesdk_app_id": "1:672384507335:android:debbe5033ce3c88acd0de2",
         "android_client_info": {
           "package_name": "com.androproj.ex1"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyDgSpKrvTLUY4v9YPg00Oc72Z7dhI4wr9E"
+          "current_key": "AIzaSyDoZnDM8MphmhXIoPEucGoTeUiWvtqAMAU"
         }
       ],
       "services": {
