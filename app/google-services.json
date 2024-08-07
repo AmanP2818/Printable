@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "672384507335",
-    "project_id": "mini-ride",
-    "storage_bucket": "mini-ride.appspot.com"
+    "project_number": "938765458903",
+    "project_id": "printable-bc1b8",
+    "storage_bucket": "printable-bc1b8.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:672384507335:android:debbe5033ce3c88acd0de2",
+        "mobilesdk_app_id": "1:938765458903:android:9ad672e303602407f9bf92",
         "android_client_info": {
           "package_name": "com.androproj.ex1"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyDoZnDM8MphmhXIoPEucGoTeUiWvtqAMAU"
+          "current_key": "AIzaSyAXBFJ_KLIMB2ARGgVY7-ncq6oM85g49E0"
         }
       ],
       "services": {

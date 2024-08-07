@@ -54,7 +54,7 @@ public class ver_two extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()) {
-                    Intent mainIntent = new Intent(ver_two.this, app_tour_one.class);
+                    Intent mainIntent = new Intent(ver_two.this, MainActivity.class);
                     mainIntent.putExtra("mobile", phoneNumber);
                     mainIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     startActivity(mainIntent);

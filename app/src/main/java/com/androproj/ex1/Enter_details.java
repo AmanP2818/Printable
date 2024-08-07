@@ -121,7 +121,7 @@ public class Enter_details extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()) {
-                            Intent mainIntent = new Intent(Enter_details.this, MainActivity.class);
+                            Intent mainIntent = new Intent(Enter_details.this, app_tour_one.class);
                             mainIntent.putExtra("mobile", phoneNumber);
                             mainIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                             startActivity(mainIntent);
